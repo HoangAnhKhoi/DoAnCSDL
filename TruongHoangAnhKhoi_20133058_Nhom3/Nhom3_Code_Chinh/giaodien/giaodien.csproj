@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81D5E7F5-BEB8-426A-9D83-1B2C4B6F9478}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>giaodien</RootNamespace>
+    <AssemblyName>giaodien</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\..\..\Download\_Getintopc.com_Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.2\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Spire.Doc, Version=10.5.9.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Doc.10.5.9\lib\net40\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=8.5.0.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Doc.10.5.9\lib\net40\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase.cs" />
+    <Compile Include="Form_nhapkho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_nhapkho.Designer.cs">
+      <DependentUpon>Form_nhapkho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_CongViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CongViec.Designer.cs">
+      <DependentUpon>Form_CongViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ChinhSuaHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ChinhSuaHD.Designer.cs">
+      <DependentUpon>Form_ChinhSuaHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_DoanhThuMotThang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_DoanhThuMotThang.Designer.cs">
+      <DependentUpon>Form_DoanhThuMotThang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_KhachHang.Designer.cs">
+      <DependentUpon>Form_KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_NhanVien.Designer.cs">
+      <DependentUpon>Form_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_PhieuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_PhieuThu.Designer.cs">
+      <DependentUpon>Form_PhieuThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_TinhLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_TinhLuong.Designer.cs">
+      <DependentUpon>Form_TinhLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_XemHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_XemHD.Designer.cs">
+      <DependentUpon>Form_XemHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GarageDB.cs" />
+    <Compile Include="Sign_up.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sign_up.Designer.cs">
+      <DependentUpon>Sign_up.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Chinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Chinh.Designer.cs">
+      <DependentUpon>Form_Chinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forgot_password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forgot_password.Designer.cs">
+      <DependentUpon>Forgot_password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_CongViec.resx">
+      <DependentUpon>Form_CongViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ChinhSuaHD.resx">
+      <DependentUpon>Form_ChinhSuaHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_DoanhThuMotThang.resx">
+      <DependentUpon>Form_DoanhThuMotThang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_KhachHang.resx">
+      <DependentUpon>Form_KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_NhanVien.resx">
+      <DependentUpon>Form_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_nhapkho.resx">
+      <DependentUpon>Form_nhapkho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_PhieuThu.resx">
+      <DependentUpon>Form_PhieuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_TinhLuong.resx">
+      <DependentUpon>Form_TinhLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_XemHD.resx">
+      <DependentUpon>Form_XemHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sign_up.resx">
+      <DependentUpon>Sign_up.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Chinh.resx">
+      <DependentUpon>Form_Chinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forgot_password.resx">
+      <DependentUpon>Forgot_password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Presentation1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z3401357090598_2dd5e6ac3789cc486b52f2ed3874ca32.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\artmaster_logout_mini_icon_preview_3e0c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Presentation1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phieuthu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receipt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receipt %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-out %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-out %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-out %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
