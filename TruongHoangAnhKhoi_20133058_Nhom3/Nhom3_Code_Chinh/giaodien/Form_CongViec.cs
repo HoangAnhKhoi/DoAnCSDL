@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace giaodien
 {
     public partial class Form_CongViec : Form
     {
+        DataBase db = new DataBase();
         public Form_CongViec()
         {
             InitializeComponent();
@@ -21,110 +23,31 @@ namespace giaodien
         {
             try
             {
-                GarageDB db = new GarageDB();
-                DataTable tho = db.LayBang(db.CV);
-                FillDataIntoGrid(tho);
+                Form1 formDangNhap = new Form1();
+                string query = "SELECT * FROM  XUAT_CVIEC()";
+                DataTable table_cv = db.Execute(query);
+                if (formDangNhap.ChucVu() == "Quản lý")
+                {
+                    tabControl.TabPages.Remove(tabThuNgan);
+                    data_cv.DataSource = table_cv;
+                    string query1 = "SELECT * FROM  XUAT_VL()";
+                    DataTable table_chuVu = db.Execute(query1);
+                    cb_vlieu.DataSource = null;
+                    cb_vlieu.Items.Clear();
+                    cb_vlieu.DataSource = table_chuVu;
+                    cb_vlieu.DisplayMember = "TenVL";
+                    cb_vlieu.ValueMember = "MaVL";
+                }
+                else
+                {
+                    data_cv_thungan.DataSource = table_cv;
+                    tabControl.TabPages.Remove(tabPageQuanLy);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-        private void FillDataIntoGrid(DataTable list)
-        {
-            data_cv.Rows.Clear();
-            for (int i = 0; i < list.Rows.Count; i++)
-            {
-                int index = data_cv.Rows.Add();
-                data_cv.Rows[i].Cells[0].Value = list.Rows[i][0].ToString();
-                data_cv.Rows[i].Cells[1].Value = list.Rows[i][1].ToString();
-                data_cv.Rows[i].Cells[2].Value = list.Rows[i][2].ToString();
-                data_cv.Rows[i].Cells[3].Value = list.Rows[i][3].ToString();
-            }
-        }
-
-        private void btn_themcv_Click(object sender, EventArgs e)
-        {
-            DataBase db = new DataBase();
-            GarageDB gr = new GarageDB();
-            string macv = txt_macv.Text;
-            string ndcv = txt_tiencongcv.Text;
-            string tiencong = txt_noidungcv.Text;
-            string tienhh = txt_vatlieucv.Text;
-            string query1 = "MaCV='" + macv + "'";
-            if (macv == "" || ndcv == "" || tiencong == "" || tienhh == "")
-                MessageBox.Show("Hãy nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK);
-            else
-            {
-                if (gr.LayBangDK(query1, gr.CV).Rows.Count != 0)
-                    MessageBox.Show("Mã số này đã tồn tại", "Thông báo", MessageBoxButtons.OK);
-                else
-                {
-                    string query2 = "insert into CONGVIEC values('" + macv + "',N'" + ndcv + "'," + tiencong + "," + tienhh + ")";
-                    db.ExecuteNonQuery(query2);
-                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
-                }
-            }
-            DataTable tho = gr.LayBang(gr.CV);
-            FillDataIntoGrid(tho);
-        }
-
-        private void btn_suacv_Click(object sender, EventArgs e)
-        {
-            DataBase db = new DataBase();
-            GarageDB gr = new GarageDB();
-            string macv = txt_macv.Text;
-            string ndcv = txt_tiencongcv.Text;
-            string tiencong = txt_noidungcv.Text;
-            string tienhh = txt_vatlieucv.Text;
-            string query1 = "MaCV='" + macv + "'";
-            if (macv == "" || ndcv == "" || tiencong == "" || tienhh == "")
-                MessageBox.Show("Hãy nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK);
-            else
-            {
-                if (gr.LayBangDK(query1, gr.CV).Rows.Count == 0)
-                    MessageBox.Show("Mã số này không tồn tại", "Thông báo", MessageBoxButtons.OK);
-                else
-                {
-                    string query2 = "update CONGVIEC set NoiDungCV=N'" + ndcv + "',TienCong=" + tiencong + ",TienHH=" + tienhh + " where MaCV='" + macv + "'";
-                    db.ExecuteNonQuery(query2);
-                    MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK);
-                }
-            }
-            DataTable tho = gr.LayBang(gr.CV);
-            FillDataIntoGrid(tho);
-        }
-
-        private void btn_xoacv_Click(object sender, EventArgs e)
-        {
-            DataBase db = new DataBase();
-            GarageDB gr = new GarageDB();
-            string macv = txt_macv.Text;
-            string query1 = "MaCV='" + macv + "'";
-            if (macv == "")
-                MessageBox.Show("Hãy nhập mã công việc", "Thông báo", MessageBoxButtons.OK);
-            else
-            {
-                if (gr.LayBangDK(query1, gr.CV).Rows.Count == 0)
-                    MessageBox.Show("Mã số này không tồn tại", "Thông báo", MessageBoxButtons.OK);
-                else
-                {
-                    string query3 = "MaCV='" + macv + "'";
-                    DataTable a = gr.LayBangDK(query3, gr.CT);
-                    if (a.Rows.Count != 0)
-                    {
-                        MessageBox.Show("Không thể xóa. Dữ liệu đang liên kết với bảng hợp đồng nào đó", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        string query2 = "MaCV='" + macv + "'";
-                        gr.deleteDK(query2, gr.CV);
-                        MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK);
-                    }
-                }
-            }
-            DataTable tho = gr.LayBang(gr.CV);
-            FillDataIntoGrid(tho);
         }
 
         private void data_cv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -133,12 +56,12 @@ namespace giaodien
             {
                     DataGridViewRow row = new DataGridViewRow();
                     row = data_cv.Rows[e.RowIndex];
-                    if (row != null && row!=data_cv.Rows[data_cv.Rows.Count-1])
+                    if (row != null)
                     {
                         txt_macv.Text = row.Cells[0].Value.ToString();
-                        txt_tiencongcv.Text = row.Cells[1].Value.ToString();
-                        txt_noidungcv.Text = row.Cells[2].Value.ToString();
-                        txt_vatlieucv.Text = row.Cells[3].Value.ToString();
+                        txt_noidungcv.Text = row.Cells[1].Value.ToString();
+                        txt_tiencongcv.Text = row.Cells[2].Value.ToString();
+                        cb_vlieu.Text= row.Cells[3].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -174,22 +97,91 @@ namespace giaodien
 
         private void txt_tienhh_Leave(object sender, EventArgs e)
         {
-            bool a = true;
-            GarageDB gr = new GarageDB();
-            string tienhh = txt_vatlieucv.Text;
-            foreach (int i in tienhh)
-            {
-                if (i < 48 || i > 57)
-                {
-                    a = false;
-                    break;
-                }
-            }
-            if (a == false)
-            {
-                MessageBox.Show("Mục này không được có chữ", "Thông báo", MessageBoxButtons.OK);
-                txt_vatlieucv.Text = "";
-            }
+        }
+
+        private void btn_themcv_Click_1(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "EXECUTE THEM_CViec @mavl,@noidungcv,@tietcong,@vatlieu,@result output";
+            SqlParameter maCVParam = new SqlParameter("@mavl", txt_macv.Text);
+            maCVParam.SqlDbType = SqlDbType.Char;
+            maCVParam.Size = 6;
+            SqlParameter noiDungCVParam = new SqlParameter("@noidungcv", txt_noidungcv.Text);
+            noiDungCVParam.SqlDbType = SqlDbType.NVarChar;
+            noiDungCVParam.Size = 40;
+            SqlParameter tienCongParam = new SqlParameter("@tietcong", txt_tiencongcv.Text);
+            tienCongParam.SqlDbType = SqlDbType.Decimal;
+            SqlParameter maVLParam = new SqlParameter("@vatlieu", cb_vlieu.SelectedValue.ToString());
+            maVLParam.SqlDbType = SqlDbType.Char;
+            maVLParam.Size = 6;
+            SqlParameter resultParam = new SqlParameter("@result", 0);
+            resultParam.SqlDbType = SqlDbType.Int;
+            resultParam.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(maCVParam);
+            cmd.Parameters.Add(noiDungCVParam);
+            cmd.Parameters.Add(tienCongParam);
+            cmd.Parameters.Add(maVLParam);
+            cmd.Parameters.Add(resultParam);
+            db.ExecuteCMD(cmd);
+            int result = (int)cmd.Parameters["@result"].Value;
+            if (result == 0)
+                MessageBox.Show("Thêm không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
+            Form_CongViec_Load(sender, e);
+        }
+
+        private void btn_suacv_Click_1(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "EXECUTE SUA_CViec @macv,@noidungcv,@tietcong,@vatlieu,@result output";
+            SqlParameter maCVParam = new SqlParameter("@macv", txt_macv.Text);
+            maCVParam.SqlDbType = SqlDbType.Char;
+            maCVParam.Size = 6;
+            SqlParameter noiDungCVParam = new SqlParameter("@noidungcv", txt_noidungcv.Text);
+            noiDungCVParam.SqlDbType = SqlDbType.NVarChar;
+            noiDungCVParam.Size = 40;
+            SqlParameter tienCongParam = new SqlParameter("@tietcong", txt_tiencongcv.Text);
+            tienCongParam.SqlDbType = SqlDbType.Decimal;
+            SqlParameter maVLParam = new SqlParameter("@vatlieu", cb_vlieu.SelectedValue.ToString());
+            maVLParam.SqlDbType = SqlDbType.Char;
+            maVLParam.Size = 6;
+            SqlParameter resultParam = new SqlParameter("@result", 0);
+            resultParam.SqlDbType = SqlDbType.Int;
+            resultParam.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(maCVParam);
+            cmd.Parameters.Add(noiDungCVParam);
+            cmd.Parameters.Add(tienCongParam);
+            cmd.Parameters.Add(maVLParam);
+            cmd.Parameters.Add(resultParam);
+            db.ExecuteCMD(cmd);
+            int result = (int)cmd.Parameters["@result"].Value;
+            if (result == 0)
+                MessageBox.Show("Sửa không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK);
+            Form_CongViec_Load(sender, e);
+        }
+
+        private void btn_xoacv_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "EXECUTE XOA_CViec @macv,@result output";
+            SqlParameter maNVParam = new SqlParameter("@macv", txt_macv.Text);
+            maNVParam.SqlDbType = SqlDbType.Char;
+            maNVParam.Size = 6;
+            SqlParameter resultParam = new SqlParameter("@result", 0);
+            resultParam.SqlDbType = SqlDbType.Int;
+            resultParam.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(resultParam);
+            cmd.Parameters.Add(maNVParam);
+            db.ExecuteCMD(cmd);
+            int result = (int)cmd.Parameters["@result"].Value;
+            if (result == 0)
+                MessageBox.Show("Xóa không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK);
+            Form_CongViec_Load(sender, e);
         }
     }
 }

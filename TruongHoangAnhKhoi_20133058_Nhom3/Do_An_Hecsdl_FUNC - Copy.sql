@@ -52,10 +52,10 @@ AS
 	BEGIN TRAN
 		BEGIN TRY
 			UPDATE dbo.TT_NGUOI
-			SET Hoten=@hoten,DiaChi=@diachi,DienThoai=@dienthoai,NgaySinh=@ngaysinh,CCCD=@cccd,GioiTinh=@gioitinh 
+			SET Hoten=@hoten,DiaChi=@diachi,DienThoai=@dienthoai,NgaySinh=@ngaysinh,CCCD=@cccd,GioiTinh=@gioitinh
 			WHERE NguoiID = @nguoiid;
 			UPDATE dbo.NHANVIEN
-			SET Luong=@luong
+			SET Luong=@luong, MaCV=@macv
 			WHERE NV_NguoiID=@nguoiid;
 			set @result=1
 			COMMIT TRAN
@@ -66,13 +66,14 @@ AS
 		END CATCH
 GO
 -----XÓA
+
 CREATE PROC XOA_NV
 @nguoiid CHAR(6),
 @result int output
 as
 	BEGIN TRAN
 		BEGIN TRY
-			DELETE FROM dbo.TT_NGUOI WHERE @nguoiid = NguoiID;
+			DELETE FROM dbo.TT_NGUOI WHERE NguoiID = @nguoiid;
 			set @result=1
 			COMMIT TRAN
 		END TRY 
@@ -224,7 +225,6 @@ GO
 CREATE FUNCTION XUAT_NCC() RETURNS table
 as
 RETURN (SELECT * FROM NHACUNGCAP)
-GO
 -----THÊM
 CREATE PROC THEM_NCC
 @manhacc CHAR(6),
@@ -243,8 +243,6 @@ AS
 		ROLLBACK TRAN
 		set @result=0
 		END CATCH
-
-GO
 ----- SỬA
 ALTER PROC SUA_NCC
 @manhacc CHAR(6),
@@ -265,8 +263,6 @@ AS
 		ROLLBACK TRAN
 		set @result=0
 		END CATCH
-
-GO
 ----- Xóa
 CREATE PROC XOA_NCC
 @manhacc CHAR(6),
@@ -286,11 +282,10 @@ AS
 		END CATCH
 GO
 ---Thêm, xóa, sửa, xuất bảng CONGVIEC
-CREATE FUNCTION XUAT_CVIEC() RETURNS table
+ALTER FUNCTION XUAT_CVIEC() RETURNS table
 as
-RETURN (SELECT * FROM CONGVIEC)
+RETURN (SELECT * FROM VIEW_CVIEC)
 
-GO
 -----THÊM
 CREATE PROC THEM_CVIEC
 @macv CHAR(6),

@@ -13,12 +13,10 @@ namespace giaodien
 {
     public partial class Form1 : Form
     {
-        public string chucVuUser;
         public Form1()
         {
             InitializeComponent();
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             txt_pass.UseSystemPasswordChar = true;
@@ -50,14 +48,19 @@ namespace giaodien
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public string ChucVu()
         {
-            DataBase db = new DataBase();
+            string chucVuUser;
             if (rbn_quanly.Checked == true)
                 chucVuUser = rbn_quanly.Text;
             else
                 chucVuUser = rbn_thungan.Text;
-            string query = "SELECT dbo.XACMINH_USERS('"+txt_nameacc.Text+"','"+txt_pass.Text+"',N'"+chucVuUser+"')";
+            return chucVuUser;
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataBase db = new DataBase();
+            string query = "SELECT dbo.XACMINH_USERS('"+txt_nameacc.Text+"','"+txt_pass.Text+"',N'"+ ChucVu() + "')";
             DataTable b = db.Execute(query);
             int result = int.Parse(b.Rows[0][0].ToString());
             if (result == 0)
@@ -71,7 +74,6 @@ namespace giaodien
                 MessageBox.Show("Mật khẩu sai", "Thông báo", MessageBoxButtons.OK);
             else
                 MessageBox.Show("Không có tên đăng nhập này", "Thông báo", MessageBoxButtons.OK);
-            
         }
 
         private void txt_pass_TextChanged(object sender, EventArgs e)

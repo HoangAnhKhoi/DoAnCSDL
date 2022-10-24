@@ -26,10 +26,9 @@ namespace giaodien
                 Form1 formDangNhap = new Form1();
                 string query = "SELECT * FROM  XUAT_NV()";
                 DataTable table_nv = db.Execute(query);
-                txt_manv.Text = formDangNhap.chucVuUser;
-                if (formDangNhap.chucVuUser == "Quản lý")
+                if (formDangNhap.ChucVu() == "Quản lý")
                 {
-                    tabControl.Hide();
+                    tabControl.TabPages.Remove(tabThuNgan);
                     data_nv.DataSource = table_nv;
                     string query1 = "SELECT * FROM  XUAT_CHUCVU()";
                     DataTable table_chuVu = db.Execute(query1);
@@ -194,14 +193,8 @@ namespace giaodien
             cmd.Parameters.Add(cccdParam);
             cmd.Parameters.Add(gTinhParam);
             cmd.Parameters.Add(resultParam);
-            // int result = int.Parse(db.ExecuteCMD(cmd).Rows[0][0].ToString());
             db.ExecuteCMD(cmd);
             int result = (int)cmd.Parameters["@result"].Value;
-            /*string query= "DECLARE @result as int EXECUTE THEM_NV '" + txt_manv.Text+"','"+txt_tennv.Text+"','"+txt_dchinv.Text+"','"+txt_sdtnv.Text+"','"+date_ngaysinh.Text+"','"
-                                                +txt_cccdnv.Text+"',"+gTinh.ToString()+",'"+txt_macv.Text+"',"+txt_luong.Text+",@result output SELECT @result";
-            db.Execute(query);
-            DataTable d = db.Execute(query);
-            int result = int.Parse(db.Execute(query).Rows[0][0].ToString());*/
             if (result == 0)
                 MessageBox.Show("Thêm không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
