@@ -19,10 +19,10 @@ namespace giaodien
         DataSet ds;
         public DataBase()
         {
-            /*string strCnn = @"Data Source=DESKTOP-VB316NT\SQLEXPRESS; Database=QLSuaChuaXe;" +
-                            "user id = sa;password = 123456; MultipleActiveResultSets=True;";*/
-            string strCnn = @"Data Source=LAPTOP-ER9IVPEV\SQLEXPRESS; Database=QLSuaChuaXe3;" +
-                            "user id = sa;password = 01677448545; MultipleActiveResultSets=True;";
+            string strCnn = @"Data Source=DESKTOP-VB316NT\SQLEXPRESS; Database=QLSuaChuaXe3;" +
+                            "user id = sa;password = 123456; MultipleActiveResultSets=True;";
+            //string strCnn = @"Data Source=LAPTOP-ER9IVPEV\SQLEXPRESS; Database=QLSuaChuaXe3;" +
+            //                "user id = sa;password = 01677448545; MultipleActiveResultSets=True;";
             sqlConn = new SqlConnection(strCnn);
 
         }

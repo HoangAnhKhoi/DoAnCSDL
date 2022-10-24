@@ -28,3 +28,34 @@ D:\HỌC\HeCSDL\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giao
 D:\HỌC\HeCSDL\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.csproj.CopyComplete
 D:\HỌC\HeCSDL\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.exe
 D:\HỌC\HeCSDL\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.pdb
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\bin\Debug\giaodien.exe.config
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\bin\Debug\giaodien.exe
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\bin\Debug\giaodien.pdb
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\bin\Debug\Guna.UI2.dll
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\bin\Debug\Spire.Doc.dll
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\bin\Debug\Spire.Pdf.dll
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\bin\Debug\Microsoft.mshtml.dll
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\bin\Debug\Spire.Doc.xml
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\bin\Debug\Spire.Pdf.xml
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.csproj.AssemblyReference.cache
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.csproj.SuggestedBindingRedirects.cache
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.csproj.ResolveComReference.cache
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Form1.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Form_CongViec.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Form_ChinhSuaHD.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Form_DoanhThuMotThang.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Form_KhachHang.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Form_NhanVien.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Form_nhapkho.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Form_PhieuThu.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Form_TinhLuong.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Form_XemHD.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Sign_up.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Form_Chinh.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Forgot_password.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.Properties.Resources.resources
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.csproj.GenerateResource.cache
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.csproj.CoreCompileInputs.cache
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.csproj.CopyComplete
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.exe
+E:\Studying\Ki1_nam3\He quan tri co so du lieu\prj\DoAnCSDL\TruongHoangAnhKhoi_20133058_Nhom3\Nhom3_Code_Chinh\giaodien\obj\Debug\giaodien.pdb

@@ -71,7 +71,7 @@ namespace giaodien
                 MessageBox.Show("Mật khẩu sai", "Thông báo", MessageBoxButtons.OK);
             else
                 MessageBox.Show("Không có tên đăng nhập này", "Thông báo", MessageBoxButtons.OK);
-            txt_nameacc.Text = chucVuUser;
+            
         }
 
         private void txt_pass_TextChanged(object sender, EventArgs e)

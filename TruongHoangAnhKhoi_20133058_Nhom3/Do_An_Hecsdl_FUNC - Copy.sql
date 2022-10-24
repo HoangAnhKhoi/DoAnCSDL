@@ -1,5 +1,4 @@
 ﻿USE QLSuaChuaXe3
-
 GO
 ---Thêm, xóa, sửa, xuất bảng NHÂN VIÊN
 -----Xuât thông tin
