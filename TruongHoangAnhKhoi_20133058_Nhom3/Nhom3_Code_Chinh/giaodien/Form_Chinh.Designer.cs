@@ -33,8 +33,8 @@
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlstats = new System.Windows.Forms.Panel();
             this.btnDangXuat = new System.Windows.Forms.Button();
-            this.btnNhapKho = new System.Windows.Forms.Button();
             this.btnDoanhSo = new System.Windows.Forms.Button();
+            this.btnNhapKho = new System.Windows.Forms.Button();
             this.btnPhieuThu = new System.Windows.Forms.Button();
             this.pnlHopDong = new System.Windows.Forms.Panel();
             this.btnXemHD = new System.Windows.Forms.Button();
@@ -67,8 +67,8 @@
             this.guna2CustomGradientPanel1.AutoScroll = true;
             this.guna2CustomGradientPanel1.Controls.Add(this.pnlstats);
             this.guna2CustomGradientPanel1.Controls.Add(this.btnDangXuat);
-            this.guna2CustomGradientPanel1.Controls.Add(this.btnNhapKho);
             this.guna2CustomGradientPanel1.Controls.Add(this.btnDoanhSo);
+            this.guna2CustomGradientPanel1.Controls.Add(this.btnNhapKho);
             this.guna2CustomGradientPanel1.Controls.Add(this.btnPhieuThu);
             this.guna2CustomGradientPanel1.Controls.Add(this.pnlHopDong);
             this.guna2CustomGradientPanel1.Controls.Add(this.btnHopDong);
@@ -117,29 +117,6 @@
             this.btnDangXuat.UseVisualStyleBackColor = false;
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
-            // btnNhapKho
-            // 
-            this.btnNhapKho.BackColor = System.Drawing.Color.Transparent;
-            this.btnNhapKho.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNhapKho.FlatAppearance.BorderSize = 0;
-            this.btnNhapKho.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNhapKho.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnNhapKho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhapKho.Font = new System.Drawing.Font("Lato Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhapKho.ForeColor = System.Drawing.Color.LightGray;
-            this.btnNhapKho.Image = global::giaodien.Properties.Resources.box__2_;
-            this.btnNhapKho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapKho.Location = new System.Drawing.Point(0, 521);
-            this.btnNhapKho.Name = "btnNhapKho";
-            this.btnNhapKho.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnNhapKho.Size = new System.Drawing.Size(176, 44);
-            this.btnNhapKho.TabIndex = 16;
-            this.btnNhapKho.Text = " Nhập kho";
-            this.btnNhapKho.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapKho.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNhapKho.UseVisualStyleBackColor = false;
-            this.btnNhapKho.Click += new System.EventHandler(this.btnNhapKho_Click);
-            // 
             // btnDoanhSo
             // 
             this.btnDoanhSo.BackColor = System.Drawing.Color.Transparent;
@@ -152,16 +129,39 @@
             this.btnDoanhSo.ForeColor = System.Drawing.Color.LightGray;
             this.btnDoanhSo.Image = global::giaodien.Properties.Resources.profit;
             this.btnDoanhSo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoanhSo.Location = new System.Drawing.Point(0, 477);
+            this.btnDoanhSo.Location = new System.Drawing.Point(0, 521);
             this.btnDoanhSo.Name = "btnDoanhSo";
             this.btnDoanhSo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDoanhSo.Size = new System.Drawing.Size(176, 44);
-            this.btnDoanhSo.TabIndex = 15;
+            this.btnDoanhSo.TabIndex = 16;
             this.btnDoanhSo.Text = " Doanh số";
             this.btnDoanhSo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDoanhSo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDoanhSo.UseVisualStyleBackColor = false;
             this.btnDoanhSo.Click += new System.EventHandler(this.btnDoanhSo_Click);
+            // 
+            // btnNhapKho
+            // 
+            this.btnNhapKho.BackColor = System.Drawing.Color.Transparent;
+            this.btnNhapKho.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNhapKho.FlatAppearance.BorderSize = 0;
+            this.btnNhapKho.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNhapKho.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnNhapKho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhapKho.Font = new System.Drawing.Font("Lato Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhapKho.ForeColor = System.Drawing.Color.LightGray;
+            this.btnNhapKho.Image = global::giaodien.Properties.Resources.box__2_;
+            this.btnNhapKho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhapKho.Location = new System.Drawing.Point(0, 477);
+            this.btnNhapKho.Name = "btnNhapKho";
+            this.btnNhapKho.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnNhapKho.Size = new System.Drawing.Size(176, 44);
+            this.btnNhapKho.TabIndex = 15;
+            this.btnNhapKho.Text = " Nhập kho";
+            this.btnNhapKho.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhapKho.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNhapKho.UseVisualStyleBackColor = false;
+            this.btnNhapKho.Click += new System.EventHandler(this.btnNhapKho_Click);
             // 
             // btnPhieuThu
             // 
@@ -520,8 +520,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlstats;
         private System.Windows.Forms.Button btnDangXuat;
-        private System.Windows.Forms.Button btnDoanhSo;
         private System.Windows.Forms.Button btnNhapKho;
+        private System.Windows.Forms.Button btnDoanhSo;
         private System.Windows.Forms.Button btnMinimize;
     }
 }

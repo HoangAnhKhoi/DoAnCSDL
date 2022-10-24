@@ -48,9 +48,9 @@ namespace giaodien
             DataBase db = new DataBase();
             GarageDB gr = new GarageDB();
             string macv = txt_macv.Text;
-            string ndcv = txt_ndcv.Text;
-            string tiencong = txt_tiencv.Text;
-            string tienhh = txt_tienhh.Text;
+            string ndcv = txt_tiencongcv.Text;
+            string tiencong = txt_noidungcv.Text;
+            string tienhh = txt_vatlieucv.Text;
             string query1 = "MaCV='" + macv + "'";
             if (macv == "" || ndcv == "" || tiencong == "" || tienhh == "")
                 MessageBox.Show("Hãy nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK);
@@ -74,9 +74,9 @@ namespace giaodien
             DataBase db = new DataBase();
             GarageDB gr = new GarageDB();
             string macv = txt_macv.Text;
-            string ndcv = txt_ndcv.Text;
-            string tiencong = txt_tiencv.Text;
-            string tienhh = txt_tienhh.Text;
+            string ndcv = txt_tiencongcv.Text;
+            string tiencong = txt_noidungcv.Text;
+            string tienhh = txt_vatlieucv.Text;
             string query1 = "MaCV='" + macv + "'";
             if (macv == "" || ndcv == "" || tiencong == "" || tienhh == "")
                 MessageBox.Show("Hãy nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK);
@@ -136,9 +136,9 @@ namespace giaodien
                     if (row != null && row!=data_cv.Rows[data_cv.Rows.Count-1])
                     {
                         txt_macv.Text = row.Cells[0].Value.ToString();
-                        txt_ndcv.Text = row.Cells[1].Value.ToString();
-                        txt_tiencv.Text = row.Cells[2].Value.ToString();
-                        txt_tienhh.Text = row.Cells[3].Value.ToString();
+                        txt_tiencongcv.Text = row.Cells[1].Value.ToString();
+                        txt_noidungcv.Text = row.Cells[2].Value.ToString();
+                        txt_vatlieucv.Text = row.Cells[3].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -156,7 +156,7 @@ namespace giaodien
         {
             bool a = true;
             GarageDB gr = new GarageDB();
-            string tiencv = txt_tiencv.Text;
+            string tiencv = txt_noidungcv.Text;
             foreach (int i in tiencv)
             {
                 if (i < 48 || i > 57)
@@ -168,7 +168,7 @@ namespace giaodien
             if (a == false)
             {
                 MessageBox.Show("Mục này không được có chữ", "Thông báo", MessageBoxButtons.OK);
-                txt_tiencv.Text = "";
+                txt_noidungcv.Text = "";
             }
         }
 
@@ -176,7 +176,7 @@ namespace giaodien
         {
             bool a = true;
             GarageDB gr = new GarageDB();
-            string tienhh = txt_tienhh.Text;
+            string tienhh = txt_vatlieucv.Text;
             foreach (int i in tienhh)
             {
                 if (i < 48 || i > 57)
@@ -188,7 +188,7 @@ namespace giaodien
             if (a == false)
             {
                 MessageBox.Show("Mục này không được có chữ", "Thông báo", MessageBoxButtons.OK);
-                txt_tienhh.Text = "";
+                txt_vatlieucv.Text = "";
             }
         }
     }
